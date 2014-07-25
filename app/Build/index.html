@@ -1,0 +1,44 @@
+<html>
+  <head>
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+    <title>Sigma X</title>
+    <link rel="stylesheet" type="text/css" href="assets/ui/css/flatui 2.css">
+    <!-- <link rel="favicon" href="Sigma%20X%20Favicon%203.png" type="image/png"> -->
+    <link rel="favicon" href="assets/favicon.ico" type="image/icon">
+  </head>
+  <body>
+    <div align="center">
+      <h1>Sigma X</h1>
+      <h4>Revolutionizing technology. One idea at a time.</h4>
+    </div>
+    <!-- <div id="sx">
+      <img src="img/Sigma%20X%20Home%20Screen%20No%20BG.png" alt="Sigma X">
+    </div> -->
+    <br>      
+    <div align="center">
+      <a class="btn btn-embossed btn-lg btn-primary" href=" ">Learn more</a>
+    </div>
+  </body>
+</html>

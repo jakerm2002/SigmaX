@@ -255,7 +255,7 @@ h6,
   font-family: inherit;
   font-weight: 700;
   line-height: 1.1;
-  text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+  text-shadow: 1px 1px 0px rgba(58, 154, 222, 1);
   color: #ffffff;
 }
 h1 small,
@@ -407,6 +407,7 @@ a.bg-danger:hover {
 ul,
 ol {
   margin-bottom: 15px;
+  list-style-type: none;        
 }
 dl {
   margin-bottom: 30px;
